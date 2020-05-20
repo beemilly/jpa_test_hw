@@ -4,22 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "user_info")
-@NamedQueries({
-	@NamedQuery(
-			name = "User_Info.selectall",
-			query = "select u from User_Info u where u.u_no = :u_no"
-			),
-	@NamedQuery(
-			name = "User_Info.findByUserInfo",
-			query = "select u from User_Info u where u.u_no = :u_no and u.u_password = :u_password"
-			)
-})
+@NamedQuery(
+		name = "User_Info.selectall",
+		query = "select u from User_Info u where u.u_no = :u_no"
+		)
 
 
 public class User_Info {
@@ -29,8 +22,6 @@ public class User_Info {
 	private int no;
 	@Column(insertable = false)
 	private String u_no;
-	@Column(insertable = false)
-	private String u_password;
 	@Column(insertable = false)
 	private String name;
 	@Column(insertable = false)
@@ -72,18 +63,6 @@ public class User_Info {
 	 */
 	public void setU_no(String u_no) {
 		this.u_no = u_no;
-	}
-	/**
-	 * @return the u_password
-	 */
-	public String getU_password() {
-		return u_password;
-	}
-	/**
-	 * @param u_password the u_password to set
-	 */
-	public void setU_password(String u_password) {
-		this.u_password = u_password;
 	}
 	/**
 	 * @return the name
@@ -195,11 +174,11 @@ public class User_Info {
 	}
 	@Override
 	public String toString() {
-		return "User_Info [no=" + no + ", u_no=" + u_no + ", u_password=" + u_password + ", name=" + name + ", gender="
-				+ gender + ", address=" + address + ", mobile_number=" + mobile_number + ", birthday=" + birthday
-				+ ", hiredate=" + hiredate + ", reg_date=" + reg_date + ", upd_date=" + upd_date + ", upd_user="
-				+ upd_user + "]";
+		return "User_Info [no=" + no + ", u_no=" + u_no + ", name=" + name + ", gender=" + gender + ", address="
+				+ address + ", mobile_number=" + mobile_number + ", birthday=" + birthday + ", hiredate=" + hiredate
+				+ ", reg_date=" + reg_date + ", upd_date=" + upd_date + ", upd_user=" + upd_user + "]";
 	}
+	
 	
 	
 }

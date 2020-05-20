@@ -15,25 +15,25 @@ import com.kimschool.manage.service.WbsTestService;
 @Controller
 public class WbsTestController {
 
-//	@Autowired
-//	WbsTestService service;
-//	
-//	@RequestMapping("wbstest")
-//	
-//	public ModelAndView wbstest(String u_no) {
-//		
-//		ModelAndView mv = new ModelAndView("wbs_test");
-//		
-//		List<Wbs_2020> list = service.select_wbs_2020(u_no);
-//		
-//		List<User_Info> list2 = service.select_user_info(u_no);
-//		
-//		List<Workplaceinfo> list3 = service.select_workplaceinfo(u_no);
-//		
-//		mv.addObject("list", list);
-//		mv.addObject("list2", list2);
-//		mv.addObject("list3", list3);
-//		return mv;
-//	}
-//	
+	@Autowired
+	WbsTestService service;
+	
+	@RequestMapping("wbstest")
+	
+	public ModelAndView wbstest(String u_no) {
+		
+		ModelAndView mv = new ModelAndView("wbs_test");
+		
+		List<Wbs_2020> list = service.select_wbs_2020(u_no);
+		
+		List<User_Info> list2 = service.select_user_info(u_no);
+		
+		List<Workplaceinfo> list3 = service.select_workplaceinfo(u_no);
+		
+		mv.addObject("list", list);
+		mv.addObject("list2", list2);
+		mv.addObject("list3", list3);
+		return mv;
+	}
+	
 }
