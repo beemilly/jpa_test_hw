@@ -1,35 +1,33 @@
 package com.kimschool.manage.entity;
 
-
-import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Component;
+public class WbsInfoVo {
 
-
-@Component
-public class WbsInfoVo  {
-
-	String name;
-	String u_no;
+	private String u_name;
+	private String u_no;
 	
-	int min_time;
-	int max_time;
-
-	List<Wbs_2020> wbs_2020List = new ArrayList<Wbs_2020>();
+	private String min_time;
+	private String max_time;
+	
+	private int total_work_day;
+	private int total_work_time_h;
+	private int total_work_time_m;
+	
+	List<Wbs> wbslist;
 
 	/**
-	 * @return the name
+	 * @return the u_name
 	 */
-	public String getName() {
-		return name;
+	public String getU_name() {
+		return u_name;
 	}
 
 	/**
-	 * @param name the name to set
+	 * @param u_name the u_name to set
 	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setU_name(String u_name) {
+		this.u_name = u_name;
 	}
 
 	/**
@@ -49,51 +47,87 @@ public class WbsInfoVo  {
 	/**
 	 * @return the min_time
 	 */
-	public int getMin_time() {
+	public String getMin_time() {
 		return min_time;
 	}
 
 	/**
 	 * @param min_time the min_time to set
 	 */
-	public void setMin_time(int min_time) {
+	public void setMin_time(String min_time) {
 		this.min_time = min_time;
 	}
 
 	/**
 	 * @return the max_time
 	 */
-	public int getMax_time() {
+	public String getMax_time() {
 		return max_time;
 	}
 
 	/**
 	 * @param max_time the max_time to set
 	 */
-	public void setMax_time(int max_time) {
+	public void setMax_time(String max_time) {
 		this.max_time = max_time;
 	}
 
 	/**
-	 * @return the wbs_2020List
+	 * @return the total_work_day
 	 */
-	public List<Wbs_2020> getWbs_2020List() {
-		return wbs_2020List;
+	public int getTotal_work_day() {
+		return total_work_day;
 	}
 
 	/**
-	 * @param wbs_2020List the wbs_2020List to set
+	 * @param total_work_day the total_work_day to set
 	 */
-	public void setWbs_2020List(List<Wbs_2020> wbs_2020List) {
-		this.wbs_2020List = wbs_2020List;
+	public void setTotal_work_day(int total_work_day) {
+		this.total_work_day = total_work_day;
 	}
 
-	@Override
-	public String toString() {
-		return "WbsInfoVo [name=" + name + ", u_no=" + u_no + ", min_time=" + min_time + ", max_time=" + max_time
-				+ ", wbs_2020List=" + wbs_2020List + "]";
+	/**
+	 * @return the total_work_time_h
+	 */
+	public int getTotal_work_time_h() {
+		return total_work_time_h;
 	}
+
+	/**
+	 * @param total_work_time_h the total_work_time_h to set
+	 */
+	public void setTotal_work_time_h(int total_work_time_h) {
+		this.total_work_time_h = total_work_time_h;
+	}
+
+	/**
+	 * @return the total_work_time_m
+	 */
+	public int getTotal_work_time_m() {
+		return total_work_time_m;
+	}
+
+	/**
+	 * @param total_work_time_m the total_work_time_m to set
+	 */
+	public void setTotal_work_time_m(int total_work_time_m) {
+		this.total_work_time_m = total_work_time_m;
+	}
+
+	/**
+	 * @return the wbslist
+	 */
+	public List<Wbs> getWbslist() {
+		return wbslist;
+	}
+
+	/**
+	 * @param wbslist the wbslist to set
+	 */
+	public void setWbslist(List<Wbs> wbslist) {
+		this.wbslist = wbslist;
+	}
+
 	
-	
-	
+
 }

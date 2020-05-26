@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kimschool.manage.entity.User_Info;
 import com.kimschool.manage.entity.Wbs_2020;
-import com.kimschool.manage.entity.Workplaceinfo;
+import com.kimschool.manage.entity.WorkPlaceInfo;
 import com.kimschool.manage.service.WbsService;
 
 @Controller
@@ -35,8 +35,8 @@ public class WbsController {
 		return mv;
 	}
 	
-	@RequestMapping("getWbsInfo")
-	public ModelAndView getwbsinfo (String u_no) {
+	@RequestMapping("getwbsinfo")
+	public ModelAndView getwbsinfo (String u_no) throws Throwable {
 		
 		ModelAndView mv = service.getwbsinfo(u_no);
 		

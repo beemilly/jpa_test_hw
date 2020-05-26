@@ -10,11 +10,11 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "workplaceinfo")
 @NamedQuery(
-		name = "Workplaceinfo.selectall",
-		query = "select w from Workplaceinfo w where w.u_no = :u_no"
+		name = "WorkPlaceInfo.selectall",
+		query = "select w from WorkPlaceInfo w where w.u_no = :u_no"
 		)
 
-public class Workplaceinfo {
+public class WorkPlaceInfo {
 	
 	@Id
 	@GeneratedValue

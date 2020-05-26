@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kimschool.manage.entity.User_Info;
 import com.kimschool.manage.entity.Wbs_2020;
-import com.kimschool.manage.entity.Workplaceinfo;
+import com.kimschool.manage.entity.WorkPlaceInfo;
 import com.kimschool.manage.service.WbsTestService;
 
 @Controller

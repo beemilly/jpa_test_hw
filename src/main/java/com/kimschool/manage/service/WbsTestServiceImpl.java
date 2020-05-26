@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.kimschool.manage.dao.WbsTestDao;
 import com.kimschool.manage.entity.User_Info;
 import com.kimschool.manage.entity.Wbs_2020;
-import com.kimschool.manage.entity.Workplaceinfo;
+import com.kimschool.manage.entity.WorkPlaceInfo;
 @Service
 public class WbsTestServiceImpl implements WbsTestService {
 
@@ -38,12 +38,12 @@ public class WbsTestServiceImpl implements WbsTestService {
 	}
 
 	@Override
-	public List<Workplaceinfo> select_workplaceinfo(String u_no) {
+	public List<WorkPlaceInfo> select_workplaceinfo(String u_no) {
 
-		Workplaceinfo workplaceinfo = new Workplaceinfo();
+		WorkPlaceInfo workplaceinfo = new WorkPlaceInfo();
 		workplaceinfo.setU_no(u_no);
 
-		List<Workplaceinfo> result = dao.select_workplaceinfo(u_no);
+		List<WorkPlaceInfo> result = dao.select_workplaceinfo(u_no);
 		
 		return result;
 	}

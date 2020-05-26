@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.kimschool.manage.entity.Jpa_Test;
 import com.kimschool.manage.entity.User_Info;
 import com.kimschool.manage.entity.Wbs_2020;
-import com.kimschool.manage.entity.Workplaceinfo;
+import com.kimschool.manage.entity.WorkPlaceInfo;
 @Repository
 public class WbsTestDaoImpl implements WbsTestDao {
 
@@ -55,13 +55,13 @@ public class WbsTestDaoImpl implements WbsTestDao {
 
 
 	@Override
-	public List<Workplaceinfo> select_workplaceinfo(String u_no) {
+	public List<WorkPlaceInfo> select_workplaceinfo(String u_no) {
 
-		List<Workplaceinfo> list = null;
+		List<WorkPlaceInfo> list = null;
 		
 		try {
 			EntityManager em = conn.getConnection();
-			list = em.createNamedQuery("Workplaceinfo.selectall", Workplaceinfo.class).
+			list = em.createNamedQuery("Workplaceinfo.selectall", WorkPlaceInfo.class).
 					setParameter("u_no", u_no).
 					getResultList();
 			return list;

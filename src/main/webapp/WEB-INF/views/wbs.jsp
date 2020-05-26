@@ -8,7 +8,6 @@
 </head>
 <body>
 
-<h1>${name}</h1>
 
 <fieldset style="width: 300px;">
 	<legend>
@@ -17,7 +16,7 @@
 
 	<table border=1>
 			<tr>
-				<th style="background-color: lightblue;">社員名</th><td>${wbsinfo.name}</td>
+				<th style="background-color: lightblue;">社員名</th><td>${wbsinfo.u_name}</td>
 			</tr>
 			<tr>
 				<th style="background-color: lightblue;">社員番号</th><td>${wbsinfo.u_no}</td>
@@ -28,10 +27,10 @@
 
 	<table border=1>
 		<tr>
-			<th style="background-color: lightblue;">勤務日合計</th><td>17日</td>
+			<th style="background-color: lightblue;">勤務日合計</th><td>${wbsinfo.total_work_day}日</td>
 		</tr>
 		<tr>
-			<th style="background-color: lightblue;">勤務時間合計</th><td>134時間</td>
+			<th style="background-color: lightblue;">勤務時間合計</th><td>${wbsinfo.total_work_time_h}時 ${wbsinfo.total_work_time_m}分</td>
 		</tr>
 	</table>
 
@@ -51,34 +50,21 @@
 
 <table border=1>
 	<tr style="background-color: lightblue">
-		<th>日付<th>開始時間</th><th>終了時間</th><th>合計時間</th><th>休日区分</th><th>メモ</th>
+		<th>日付<th>開始時間</th><th>終了時間</th><th>昼休み時間</th><th>合計時間</th><th>休日区分</th><th>メモ</th>
 	</tr>
-	<c:forEach items="${wbsinfo.wbs_2020List}" var="list">
+	<c:forEach items="${wbsinfo.wbslist}" var="wbs">
 		<tr>
-			<td>${list.date}</td>
-			<td>${list.start_time}</td>
-			<td>${list.end_time}</td>
-			<td>${list.end_time - list.start_time - list.rest_time}</td>
-			<td>${list.vocation_type}</td>
-			<td>${list.memo}</td>
+			<td>${wbs.date}${wbs.weekday}</td>
+			<td>${wbs.start_h}時 ${wbs.start_m}分</td>
+			<td>${wbs.end_h}時 ${wbs.end_m}分</td>
+			<td>${wbs.rest_h}時 ${wbs.rest_m}分</td>
+			<td>${wbs.total_h}時 ${wbs.total_m}分</td>
+			<td>${wbs.vacation_type}</td>
+			<td>${wbs.memo}</td>
 		</tr>
 	</c:forEach>	
-	<tr>
-		<td>2020-05-20</td>
-		<td>
-			<select><option>00</option><option>09</option><option>10</option></select>時
-			<select><option>00</option><option>15</option><option>30</option><option>45</option></select>分
-		</td>
-		<td>
-			<select><option>00</option><option>18</option><option>19</option></select>時
-			<select><option>00</option><option>15</option><option>30</option><option>45</option></select>分
-		</td>
-		<td>0時間</td>
-		<td><select><option>--</option><option>午前休暇</option><option>午後休暇</option><option selected="selected">全休</option><option>早退</option></select></td>
-		<td>----</td>
-	</tr>
 
-</table>
+</table> 
 <input type = "button" value = "등록">
 
 </body>
